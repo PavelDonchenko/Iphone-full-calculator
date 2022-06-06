@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <div class="calc">
+        <div class="header">
+            <div class="clock">
+                <span class="hour"></span>:<span class="minute"></span>
+            </div>
+            <div class="header-items">
+                <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                    xmlns="http://www.w3.org/2000/svg" id="svg8" version="1.1" viewBox="0 0 161.43724 136.59262"
+                    height="7.59262mm" width="4.43724mm">
+                    <defs id="defs2" />
+                    <metadata id="metadata5">
+                        <rdf:RDF>
+                            <cc:Work rdf:about="">
+                                <dc:format>image/svg+xml</dc:format>
+                                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                <dc:title></dc:title>
+                            </cc:Work>
+                        </rdf:RDF>
+                    </metadata>
+                    <g transform="translate(114.03511,-21.377846)" id="layer1">
+                        <g id="text4487"
+                            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:165.18869019px;line-height:1.25;font-family:HGSoeiKakupoptai;-inkscape-font-specification:HGSoeiKakupoptai;letter-spacing:0px;word-spacing:0px;fill:#ffff;fill-opacity:1;stroke:none;stroke-width:4.12971735"
+                            transform="scale(1.0097625,0.99033189)" aria-label="📶">
+                            <path id="path4489" style="stroke-width:4.52906752"
+                                d="m -112.93261,21.586547 h 93.325935 v 5.404122 l -40.357162,33.15066 V 93.453306 H -72.672463 V 60.141329 l -40.260147,-33.15066 z m 52.968773,27.58522 26.969449,-19.891101 H -59.963837 Z M -99.64191,29.280666 -72.672463,49.171767 V 29.280666 Z M 46.943837,159.35133 H 20.459449 V 58.836777 h 26.484388 z m -33.178244,0 H -12.718794 V 80.856559 h 26.484387 z m -33.372268,0 h -26.5814 v -49.605 h 26.5814 z m -33.469282,0.16132 h -26.484387 v -27.74654 h 26.484387 z" />
+                        </g>
+                    </g>
+                </svg>
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="34px" height="64px"
+                    viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                    <g>
+                        <rect x="1" y="21" fill="#fff" stroke="#000000" stroke-width="2" stroke-miterlimit="10"
+                            width="58" height="24" />
+                        <polyline fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10"
+                            points="59,27 63,27 63,39 59,39 	" />
+                        <rect x="5" y="25" fill="#fff" stroke="#000000" stroke-width="2" stroke-miterlimit="10"
+                            width="50" height="16" />
+                    </g>
+                    <polyline fill="#fff" stroke="#000000" stroke-width="2" stroke-miterlimit="10"
+                        points="22,33 29,30 29,36 36,33 " />
+                </svg>
+            </div>
+        </div>
+        <div class="display">
+            <input type="text" placeholder="0" id="screen">
+        </div>
+        <div class="buttons">
+            <button class="btn digit">(</button>
+            <button class="btn digit">)</button>
+            <button class="btn" onclick = "cleanMemory()">mc</button>
+            <button class="btn" onclick = "addToMemory()">m+</button>
+            <button class="btn" onclick ='deleteLastMemory()'>m-</button>
+            <button class="btn memory" onclick = "getFromMemory()">mr </button>
+            <button class="btn main grey" onclick="screen.value = ''">AC</button>
+            <button class="btn main grey" onclick="addMinus()">+\-</button>
+            <button class="btn main grey" onclick="percents()">%</button>
+            <button class="btn main yellow digit">÷</button>
+
+            <button class="btn" onclick = 'show2nd()'>2<span class="upper">nd</span></button>
+            <button class="btn" onclick='square()'>x<span class="upper">2</span></button>
+            <button class="btn" onclick='cube()'>x<span class="upper">3</span></button>
+            <button class="btn digit">x<span class="upper">y</span></button>
+            <button class="btn main-hide" onclick='exp()'>e<span class="upper">x</span></button>
+            <button class="btn hide digit">y<span class="upper">x</span></button>
+            <button class="btn main-hide" onclick='pow10()'>10<span class="upper">x</span></button>
+            <button class="btn hide" onclick='square2()'>2<span class="upper">x</span></button>
+            <button class="btn main digit">7</button>
+            <button class="btn main digit">8</button>
+            <button class="btn main digit">9</button>
+            <button class="btn main yellow digit">X</button>
+
+            <button class="btn" onclick='numInverse()'>1/x</button>
+            <button class="btn" onclick = "sqrtroot()">2&#8730x</button>
+            <button class="btn" onclick = "cbrtroot()">3&#8730x</button>
+            <button class="btn digit" >y√x</button>
+            <button class="btn main-hide" onclick='inlog()'>In</button>
+            <button class="btn hide digit">Log<span class="upper">y</span></button>
+            <button class="btn main-hide" onclick='log()'>Log<span class="upper">10</span></button>
+            <button class="btn hide" onclick='log2()'>Log<span class="upper">2</span></button>
+            <button class="btn main digit">4</button>
+            <button class="btn main digit">5</button>
+            <button class="btn main digit">6</button>
+            <button class="btn main yellow digit">-</button>
+
+            <button class="btn" onclick='factorial()'>x!</button>
+            <button class="btn main-hide" onclick='sin()'>sin</button>
+            <button class="btn hide" onclick="arSin()">sin<span class="upper">-1</span></button>
+            <button class="btn main-hide" onclick='cos()'>cos</button>
+            <button class="btn hide" onclick="arCos()">cos<span class="upper">-1</span></button>
+            <button class="btn main-hide" onclick='tan()'>tan</button>
+            <button class="btn hide" onclick="arTan()">tan<span class="upper">-1</span></button>
+            <button class="btn" onclick='exp2()'>e</button>
+            <button class="btn digit">EE</button>
+            <button class="btn main digit">1</button>
+            <button class="btn main digit">2</button>
+            <button class="btn main digit">3</button>
+            <button class="btn main yellow digit">+</button>
+
+            <button class="btn rad" onclick="changeRad()">Rad</button>
+            <button class="btn main-hide" onclick='sinh()'>sinh</button>
+            <button class="btn hide" onclick="arSinh()">sinh<span class="upper">-1</span></button>
+            <button class="btn main-hide" onclick='cosh()'>cosh</button>
+            <button class="btn hide" onclick="arCosh()">cosh<span class="upper">-1</span></button>
+            <button class="btn main-hide" onclick='tanh()'>tanh</button>
+            <button class="btn hide" onclick="arTanh()">tanh<span class="upper">-1</span></button>
+            <button class="btn" onclick="pi()">&#960</button>
+            <button class="btn" onclick="rand()">Rand</button>
+            <button class="btn main zero digit">0</button>
+            <button class="btn main digit">.</button>
+            <button class="btn main yellow" onclick="calculate()">&#61</button>
+        </div>
+    </div>
+</body>
+
+</html>
