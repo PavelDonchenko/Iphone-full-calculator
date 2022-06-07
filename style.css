@@ -25,6 +25,18 @@ body {
     color: #fff;
     position: relative;
 }
+.calc::before{
+    content: "";
+    width: 40%;
+    height: 5px;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 12px;
+    right: 50%;
+    left: 50%;
+    transform:translateX(-50%);
+}
 #screen {
     width: 98%;
     margin: 10px 10px;
@@ -104,4 +116,28 @@ body {
 }
 ._show{
     display: block;
+}
+
+@media(orientation: portrait){
+    .btn{
+        display: none;
+        width: 70px;
+        height: 60px;
+    }
+    .main{
+        display: block;
+    }
+    #screen{
+        height: 180px;
+        font-size: 85px;
+    }
+    .calc{
+        width: 320px;
+        height: 600px;
+    }
+    .zero{
+        width: 153px;
+    }
+    
+
 }
